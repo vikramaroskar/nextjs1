@@ -2,12 +2,22 @@
 import { resolve } from "path";
 import { revalidatePath } from "next/cache";
 
+import {auth, currentUser} from "@clerk/nextjs/server";
+
 type MockUser = {
     id: number,
     name: string,
 };
 
 export default async function MockUsers() {
+
+    const authObj = await auth();
+    const userObj = await currentUser();
+
+    console.log({
+        authObj,
+        userObj
+    });
 
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
