@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import profilePic from './me.png'
+import profilePic from '../../public/me.png'
 import { Greet } from './components/greet'
 import { Counter } from './components/counter'
 
